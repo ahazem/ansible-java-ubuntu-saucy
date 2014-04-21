@@ -5,3 +5,7 @@
     state: present
     update_cache: yes
     force: yes
+
+# Cleanup.
+- name: Cleanup
+  shell: apt-get clean
