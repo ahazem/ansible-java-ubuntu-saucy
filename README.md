@@ -1,38 +1,28 @@
+
 Oracle/Open JDK role for Ubuntu Saucy (13.10)
-========
-
-A brief description of the role goes here.
-
-Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role installs Oracle JDK or OpenJDK on Ubuntu Saucy Salamander (13.10).
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The role has three variables:
+  - `java_ubuntu_saucy_jdk`: specifies whether to install the Oracle JDK or the OpenJDK, values are: `openjdk` or `oracle`.
+  - `java_ubuntu_saucy_jdk_version`: specifies the version you wish to install, can be either one of these: 6, 7, 8.
+  - `java_ununtu_saucy_jdk_version_default`: specifies the version to set as default java version, only works with Oracle JDK.
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+By default, the variables refers to openjdk 7 (so there's no need to explicitly set them if you wish to install that version).
 
 Example Playbook
 -------------------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+An example playbook might look like:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+         - role: ahazem.java_ubuntu_saucy
+           java_ubuntu_saucy_jdk: oracle
+           java_ubuntu_saucy_jdk_version: 7
+           java_ubuntu_saucy_jdk_version_default: 7
+           
