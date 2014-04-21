@@ -1,7 +1,7 @@
 # Make sure python-pycurl is installed. 
 - name: Install python-pycurl
   apt:
-    name: "python-pycurl"
+    pkg: "python-pycurl"
     state: present
     update_cache: yes
 
@@ -21,7 +21,7 @@
 # Install the oracle package.
 - name: Install the package
   apt:
-    name: "{{ java_ubuntu_saucy_jdk }}-java{{ java_ubuntu_saucy_jdk_version }}-installer"
+    pkg: "{{ java_ubuntu_saucy_jdk }}-java{{ java_ubuntu_saucy_jdk_version }}-installer"
     state: present
     update_cache: yes
     force: yes

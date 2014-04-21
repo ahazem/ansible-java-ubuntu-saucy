@@ -1,7 +1,7 @@
 # Install the openjdk package.
 - name: Install the package
   apt:
-    name: "{{ java_ubuntu_saucy_jdk }}-{{ java_ubuntu_saucy_jdk_version }}-jdk"
+    pkg: "{{ java_ubuntu_saucy_jdk }}-{{ java_ubuntu_saucy_jdk_version }}-jdk"
     state: present
     update_cache: yes
     force: yes
