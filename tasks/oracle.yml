@@ -11,8 +11,8 @@
     repo: 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu saucy main'
     state: present
 
-# Automatically accept the lincese.
-- name: Accept Oracle lincese
+# Automatically accept the license.
+- name: Accept Oracle license
   shell: "echo debconf shared/accepted-oracle-license-v1-1 {{ item }} true | debconf-set-selections"
   with_items:
     - select
